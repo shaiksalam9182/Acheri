@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:background="@color/cardview_dark_background"
+    android:orientation="vertical">
+
+    <include layout="@layout/custom_action_bar"/>
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:layout_margin="10dp"
+    android:orientation="vertical">
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:text="Registration"
+        android:textColor="#ffffff"
+        android:textSize="30dp"
+        android:layout_height="wrap_content" />
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_gravity="center"
+
+        android:id="@+id/et_name"
+        android:layout_marginTop="30dp"
+        android:textColor="#ffffff"
+        android:hint="Enter Your Name"
+        android:textColorHint="#ffffff"
+        android:backgroundTint="#ffffff"
+        android:layout_height="wrap_content" />
+
+
+   <Spinner
+       android:layout_width="match_parent"
+       android:layout_marginTop="10dp"
+       android:id="@+id/sp_country"
+       android:layout_gravity="center"
+       android:gravity="center"
+       android:layout_height="wrap_content">
+   </Spinner>
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_gravity="center"
+        android:hint="Phone No"
+        android:id="@+id/et_phone"
+        android:textColor="#ffffff"
+        android:textColorHint="#ffffff"
+        android:inputType="number"
+        android:backgroundTint="#ffffff"
+        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content" />
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_gravity="center"
+
+        android:id="@+id/et_password"
+        android:backgroundTint="#ffffff"
+        android:layout_marginTop="10dp"
+        android:inputType="textPassword"
+        android:hint="Enter Password"
+        android:textColorHint="#ffffff"
+        android:layout_height="wrap_content" />
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_gravity="center"
+        android:id="@+id/et_conf_password"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="#ffffff"
+        android:hint="Confirm Password"
+        android:textColorHint="#ffffff"
+        android:inputType="textPassword"
+        android:layout_height="wrap_content" />
+
+
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        android:text="Register"
+        android:id="@+id/bt_register"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>
+</LinearLayout>

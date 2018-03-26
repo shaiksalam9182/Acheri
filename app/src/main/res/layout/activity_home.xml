@@ -1,0 +1,39 @@
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/starting_point">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+
+
+        <include layout="@layout/custom_action_bar"/>
+
+
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tabs"
+            app:layout_scrollFlags="scroll|enterAlways"
+            android:layout_width="match_parent"
+            app:tabIndicatorColor="#000000"
+            android:background="#2d2b2b"
+            android:layout_height="50dp">
+        </android.support.design.widget.TabLayout>
+
+
+        <android.support.v4.view.ViewPager
+            android:layout_width="match_parent"
+            android:visibility="visible"
+            android:id="@+id/view_pager"
+            android:layout_height="fill_parent">
+        </android.support.v4.view.ViewPager>
+
+
+    </LinearLayout>
+
+
+</FrameLayout>
