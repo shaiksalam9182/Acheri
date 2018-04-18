@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/cardview_dark_background"
     android:orientation="vertical">
 
 
-    <include layout="@layout/custom_action_bar"/>
+
 
     <ScrollView
         android:layout_width="match_parent"
+
+        android:layout_marginBottom="55dp"
         android:layout_height="wrap_content">
 
     <LinearLayout
@@ -54,6 +56,8 @@
         android:layout_width="match_parent"
         android:layout_gravity="end"
         android:gravity="center"
+        android:background="#ffffff"
+        android:layout_alignParentBottom="true"
         android:layout_height="50dp">
 
 
@@ -61,6 +65,8 @@
         <ImageView
             android:layout_width="wrap_content"
             android:src="@mipmap/cancel"
+            android:id="@+id/img_cancel"
+            android:layout_alignParentBottom="true"
             android:layout_height="wrap_content" />
 
 
@@ -69,4 +75,4 @@
 
 
 
-</LinearLayout>
+</RelativeLayout>

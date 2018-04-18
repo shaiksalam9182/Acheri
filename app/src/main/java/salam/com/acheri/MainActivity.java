@@ -1,6 +1,8 @@
 package salam.com.acheri;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
@@ -12,6 +14,9 @@ import android.widget.ImageView;
 public class MainActivity extends AppCompatActivity {
 
     ImageView img;
+    SharedPreferences sd;
+    SharedPreferences.Editor editor;
+    String status;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +25,13 @@ public class MainActivity extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
+
+
+        sd = getSharedPreferences("login", Context.MODE_PRIVATE);
+        editor = sd.edit();
+
+        status = sd.getString("login","null");
+
 
         img = (ImageView) findViewById(R.id.img);
 
@@ -39,8 +51,13 @@ public class MainActivity extends AppCompatActivity {
                     e.printStackTrace();
                 } finally {
                     {
-                        startActivity(new Intent(MainActivity.this, Home.class));
-                        finish();
+                        if (status.equals("null")){
+                            startActivity(new Intent(MainActivity.this, Login.class));
+                            finish();
+                        }else {
+                            startActivity(new Intent( MainActivity.this,Home.class));
+                            finish();
+                        }
                     }
                 }
             }

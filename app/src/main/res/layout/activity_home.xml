@@ -6,7 +6,7 @@
     android:id="@+id/starting_point">
 
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:orientation="vertical"
         android:layout_height="match_parent">
@@ -21,19 +21,32 @@
             android:layout_width="match_parent"
             app:tabIndicatorColor="#000000"
             android:background="#2d2b2b"
+            android:layout_marginTop="60dp"
             android:layout_height="50dp">
         </android.support.design.widget.TabLayout>
+
+        <android.support.design.widget.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="50dp"
+            android:layout_marginRight="50dp"
+            android:id="@+id/float_write"
+            android:src="@mipmap/write"
+            android:backgroundTint="#ffffff"
+            android:layout_height="wrap_content" />
 
 
         <android.support.v4.view.ViewPager
             android:layout_width="match_parent"
             android:visibility="visible"
             android:id="@+id/view_pager"
+            android:layout_marginTop="110dp"
             android:layout_height="fill_parent">
         </android.support.v4.view.ViewPager>
 
 
-    </LinearLayout>
+    </RelativeLayout>
 
 
 </FrameLayout>

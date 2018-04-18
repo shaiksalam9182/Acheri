@@ -7,8 +7,10 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -51,6 +53,11 @@ public class Horror_Movies extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_horror__movies);
 
+        Toolbar actionBar = (Toolbar)findViewById(R.id.toolbar_movies);
+        setSupportActionBar(actionBar);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         list = new ArrayList<>();
 
         lvmovies = (ListView)findViewById(R.id.lv_movies);
@@ -60,6 +67,21 @@ public class Horror_Movies extends AppCompatActivity {
 
         //lvmovies.setAdapter(new MoviesAdapter());
 
+    }
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId()==android.R.id.home){
+            finish();
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finish();
     }
 
     private class MoviesAdapter extends BaseAdapter {

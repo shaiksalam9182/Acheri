@@ -1,7 +1,9 @@
 package salam.com.acheri;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -42,12 +44,18 @@ public class Login extends AppCompatActivity {
 
     String phone,password;
 
+    SharedPreferences sd;
+    SharedPreferences.Editor editor;
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        sd = getSharedPreferences("login", Context.MODE_PRIVATE);
+        editor = sd.edit();
 
 
         etphone =(EditText)findViewById(R.id.et_phone);
@@ -98,7 +106,7 @@ public class Login extends AppCompatActivity {
         protected void onPreExecute() {
             super.onPreExecute();
             pdLoading.setCancelable(false);
-            pdLoading.setMessage("Registering\nPlease Wait...");
+            pdLoading.setMessage("Authenticating\nPlease Wait...");
             pdLoading.show();
         }
 
@@ -188,8 +196,11 @@ public class Login extends AppCompatActivity {
                 Toast.makeText(Login.this,"Successfully Done",Toast.LENGTH_LONG).show();
                 Intent login = new Intent(Login.this,Home.class);
                 startActivity(login);
+                editor.putString("login","true");
+                editor.commit();
+                finish();
             }else if (s.equals("false")){
-                Toast.makeText(Login.this,"Invalid Credetials",Toast.LENGTH_LONG).show();
+                Toast.makeText(Login.this,"Invalid Credentials",Toast.LENGTH_LONG).show();
             }else {
                 Toast.makeText(Login.this,"Something went wrong..",Toast.LENGTH_LONG).show();
             }

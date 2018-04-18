@@ -5,6 +5,7 @@ import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -28,6 +29,7 @@ public class Home extends AppCompatActivity {
     private ViewPager viewPager;
     private TabLayout tabLayout;
     ImageView imgmovie,imgProfile;
+    FloatingActionButton floatWrite;
 
 
 
@@ -59,6 +61,16 @@ public class Home extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(Home.this,Profile_Module.class));
+                finish();
+            }
+        });
+
+        floatWrite = (FloatingActionButton)findViewById(R.id.float_write);
+
+        floatWrite.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Home.this,Editor.class));
             }
         });
 

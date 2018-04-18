@@ -197,17 +197,6 @@ public class Posts extends Fragment {
 
             rvPosts.setAdapter(adapter);
             Log.e("post_arraylist",list.toString());
-
-
-
-
-
-
-
-
-
-
-
         } catch (JSONException e) {
             e.printStackTrace();
 

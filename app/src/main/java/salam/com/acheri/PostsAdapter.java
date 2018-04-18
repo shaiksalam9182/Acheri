@@ -6,7 +6,9 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -24,11 +26,15 @@ class PostsAdapter extends RecyclerView.Adapter <PostsAdapter.MyViewAdapter>{
 
     public class MyViewAdapter extends RecyclerView.ViewHolder {
         TextView tvheading,tvdesc;
+        ImageView imgScared,imgComment,imgShare;
         public MyViewAdapter(View view) {
             super(view);
 
             tvheading = (TextView)view.findViewById(R.id.tv_heading);
             tvdesc = (TextView)view.findViewById(R.id.tv_story);
+            imgScared = (ImageView)view.findViewById(R.id.img_scared);
+            imgComment = (ImageView)view.findViewById(R.id.img_comment);
+            imgShare= (ImageView)view.findViewById(R.id.img_share);
         }
     }
 
@@ -49,6 +55,20 @@ class PostsAdapter extends RecyclerView.Adapter <PostsAdapter.MyViewAdapter>{
     public void onBindViewHolder(final PostsAdapter.MyViewAdapter holder, final int position) {
         if (whichclass.equals("posts")){
 
+            holder.imgScared.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(adapter_context,"Under Development",Toast.LENGTH_LONG).show();
+                }
+            });
+
+            holder.imgComment.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(adapter_context,"Under Development",Toast.LENGTH_LONG).show();
+                }
+            });
+
             holder.tvheading.setText(data.get(position).get("post_title").toString());
             holder.tvdesc.setText(data.get(position).get("post_desc").toString());
             holder.tvheading.setOnClickListener(new View.OnClickListener() {
@@ -60,6 +80,7 @@ class PostsAdapter extends RecyclerView.Adapter <PostsAdapter.MyViewAdapter>{
                     adapter_context.startActivity(head);
                 }
             });
+
 
             holder.tvdesc.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -73,6 +94,26 @@ class PostsAdapter extends RecyclerView.Adapter <PostsAdapter.MyViewAdapter>{
             });
 
         }else if (whichclass.equals("places")){
+            holder.imgScared.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(adapter_context,"Under Development",Toast.LENGTH_LONG).show();
+                }
+            });
+
+            holder.imgScared.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(adapter_context,"Under Development",Toast.LENGTH_LONG).show();
+                }
+            });
+
+            holder.imgComment.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(adapter_context,"Under Development",Toast.LENGTH_LONG).show();
+                }
+            });
 
             holder.tvheading.setText(data.get(position).get("place_title").toString());
             holder.tvdesc.setText(data.get(position).get("place_desc").toString());
@@ -97,6 +138,30 @@ class PostsAdapter extends RecyclerView.Adapter <PostsAdapter.MyViewAdapter>{
                 }
             });
         }else if (whichclass.equals("aliens")){
+
+
+            holder.imgScared.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(adapter_context,"Under Development",Toast.LENGTH_LONG).show();
+                }
+            });
+
+
+            holder.imgScared.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(adapter_context,"Under Development",Toast.LENGTH_LONG).show();
+                }
+            });
+
+            holder.imgComment.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(adapter_context,"Under Development",Toast.LENGTH_LONG).show();
+                }
+            });
+
             holder.tvheading.setText(data.get(position).get("alien_title").toString());
             holder.tvdesc.setText(data.get(position).get("alien_desc").toString());
             holder.tvheading.setOnClickListener(new View.OnClickListener() {

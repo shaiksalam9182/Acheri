@@ -99,6 +99,7 @@
                 <ImageView
                     android:layout_width="30dp"
                     android:src="@drawable/scared"
+                    android:id="@+id/img_scared"
                     android:layout_height="30dp" />
 
                     <TextView
@@ -131,6 +132,7 @@
                 <ImageView
                     android:layout_width="20dp"
                     android:src="@drawable/comment"
+                    android:id="@+id/img_comment"
                     android:layout_height="20dp" />
 
                     <TextView
@@ -158,6 +160,7 @@
                 <ImageView
                     android:layout_width="20dp"
                     android:src="@drawable/share"
+                    android:id="@+id/img_share"
                     android:layout_height="20dp" />
 
 

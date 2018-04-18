@@ -7,7 +7,7 @@
 
 
 
-    <include layout="@layout/custom_action_bar"/>
+
 
 
     <LinearLayout

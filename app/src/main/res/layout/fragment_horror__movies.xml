@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     tools:context="salam.com.acheri.Horror_Movies">
 
-    <include layout="@layout/custom_action_bar"/>
+    <include layout="@layout/custom_action_bar_movies"/>
 
     <ProgressBar
         android:layout_width="40dp"
