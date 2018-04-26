@@ -190,6 +190,7 @@ public class Posts extends Fragment {
                 map.put("post_desc",object.getString("Post_desc"));
                 map.put("time",object.getString("Post_TimeStamp"));
                 map.put("likes",object.getString("Post_Likes"));
+                map.put("shares",object.getString("shares"));
                 list.add(map);
             }
 

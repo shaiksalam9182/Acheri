@@ -182,6 +182,8 @@ public class Alien_Stuff extends Fragment {
                 map.put("alien_id",object.getString("alien_id"));
                 map.put("alien_title",object.getString("alien_title"));
                 map.put("alien_desc",object.getString("alien_desc_en"));
+                map.put("likes",object.getString("alien_likes"));
+                map.put("shares",object.getString("shares"));
                 list.add(map);
             }
             rvAliens.setAdapter(new PostsAdapter(getContext(),list,"aliens"));

@@ -107,6 +107,7 @@
                         android:text=" 10"
                         android:layout_gravity="center"
                         android:gravity="center"
+                        android:id="@+id/tv_scare_count"
                         android:textSize="20dp"
                         android:textColor="#FFFFFF"
                         android:layout_height="wrap_content" />
@@ -169,6 +170,7 @@
                         android:text=" 20"
                         android:textColor="#FFFFFF"
                         android:textSize="20dp"
+                        android:id="@+id/tv_share_count"
                         android:layout_height="wrap_content" />
 
                 </LinearLayout>

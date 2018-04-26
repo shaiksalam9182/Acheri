@@ -54,7 +54,10 @@
         <activity
             android:name=".Profile_Module"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
-        <activity android:name=".Editor"></activity>
+        <activity
+            android:name=".Editor"
+            android:theme="@style/AppTheme.NoActionBar"
+            ></activity>
     </application>
 
 </manifest>

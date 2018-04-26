@@ -179,6 +179,8 @@ public class Haunted_Places extends Fragment {
                // Log.e("resultencode",result);
                 map.put("place_title",object.getString("pl_title"));
                 map.put("place_desc",object.getString("pl_desc_en"));
+                map.put("likes",object.getString("likes"));
+                map.put("shares",object.getString("shares"));
                 list.add(map);
 
             }

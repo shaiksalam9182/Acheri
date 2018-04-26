@@ -197,6 +197,7 @@ public class Login extends AppCompatActivity {
                 Intent login = new Intent(Login.this,Home.class);
                 startActivity(login);
                 editor.putString("login","true");
+                editor.putString("user",phone);
                 editor.commit();
                 finish();
             }else if (s.equals("false")){
