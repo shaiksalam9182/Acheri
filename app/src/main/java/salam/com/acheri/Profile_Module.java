@@ -15,6 +15,10 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -37,18 +41,43 @@ public class Profile_Module extends AppCompatActivity {
     Button btLogout,btChangeProfile;
     String user;
     SharedPreferences sd;
-    TextView tvnot,tvcont,tvname,tvmob;
+    TextView tvnot,tvcont,tvname,tvmob,tvnotdesc;
     SharedPreferences.Editor editor;
+    AdView adView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile__module);
 
+        MobileAds.initialize(this, "ca-app-pub-1679206260526965~1117051146");
+        adView = findViewById(R.id.adView_profile);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        adView.loadAd(adRequest);
+
+
         tvnot = (TextView)findViewById(R.id.tv_not);
         tvcont = (TextView)findViewById(R.id.tv_cont);
         tvname = (TextView)findViewById(R.id.tv_name);
         tvmob = (TextView)findViewById(R.id.tv_mob);
+
+        tvnotdesc = (TextView)findViewById(R.id.tv_not_desc);
+
+
+        tvnotdesc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Profile_Module.this,Notifications.class));
+
+            }
+        });
+
+        tvnot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Profile_Module.this,Notifications.class));
+            }
+        });
 
         Toolbar actionBar = (Toolbar)findViewById(R.id.toolbar_profile);
         setSupportActionBar(actionBar);
@@ -107,7 +136,7 @@ public class Profile_Module extends AppCompatActivity {
             try {
 
                 // Enter URL address where your php file resides
-                url = new URL("https://salamappz.tech/Acheri/user_info.php");
+                url = new URL("https://salamlabs.com/Acheri/user_info.php");
 
             } catch (MalformedURLException e) {
                 // TODO Auto-generated catch block

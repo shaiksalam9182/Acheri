@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="horizontal"
-    android:background="#932d2d"
+    android:background="#4d4c4c"
     android:gravity="center"
     android:layout_height="wrap_content">
 
@@ -11,7 +11,7 @@
         android:id="@+id/toolbar_posts"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:background="#874747"
+        android:background="#4d4c4c"
         app:contentInsetEnd="0dp"
         android:layout_gravity="center"
         android:gravity="center"

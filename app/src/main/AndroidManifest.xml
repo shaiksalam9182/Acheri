@@ -56,7 +56,13 @@
             android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
             android:name=".Editor"
-            android:theme="@style/AppTheme.NoActionBar"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity
+            android:name=".Notifications"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity
+            android:name=".Notification_Complete_View"
+            android:theme="@style/Theme.AppCompat.NoActionBar"
             ></activity>
     </application>
 

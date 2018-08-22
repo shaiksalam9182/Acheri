@@ -1,6 +1,8 @@
 package salam.com.acheri;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.Build;
@@ -18,6 +20,12 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageView;
+import android.widget.Toast;
+
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.InterstitialAd;
+import com.google.android.gms.ads.MobileAds;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,6 +38,11 @@ public class Home extends AppCompatActivity {
     private TabLayout tabLayout;
     ImageView imgmovie,imgProfile;
     FloatingActionButton floatWrite;
+    AdView adView;
+    SharedPreferences sd;
+    String user;
+    SharedPreferences.Editor editor;
+    private InterstitialAd mInterstitialAd;
 
 
 
@@ -37,6 +50,22 @@ public class Home extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
+        sd = getSharedPreferences("login", Context.MODE_PRIVATE);
+        editor = sd.edit();
+        user = sd.getString("user","null");
+
+        MobileAds.initialize(this, "ca-app-pub-1679206260526965~1117051146");
+
+        mInterstitialAd = new InterstitialAd(this);
+        mInterstitialAd.setAdUnitId("ca-app-pub-1679206260526965/9922691596");
+        mInterstitialAd.loadAd(new AdRequest.Builder().build());
+
+
+        adView = findViewById(R.id.adView_home);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        adView.loadAd(adRequest);
+
 
         Toolbar actionBar = (Toolbar)findViewById(R.id.toolbar_videos);
         setSupportActionBar(actionBar);
@@ -60,8 +89,13 @@ public class Home extends AppCompatActivity {
         imgProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Home.this,Profile_Module.class));
-                finish();
+                if (user.equals("null")){
+                    Toast.makeText(Home.this,"Please Login To View Your Profile",Toast.LENGTH_LONG).show();
+                }else {
+                    startActivity(new Intent(Home.this,Profile_Module.class));
+                    finish();
+                }
+
             }
         });
 
@@ -70,7 +104,11 @@ public class Home extends AppCompatActivity {
         floatWrite.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Home.this,Editor.class));
+                if (user.equals("null")){
+                    Toast.makeText(Home.this,"Please Login To Write Your Story",Toast.LENGTH_LONG).show();
+                }else {
+                    startActivity(new Intent(Home.this,Editor.class));
+                }
             }
         });
 
@@ -83,10 +121,14 @@ public class Home extends AppCompatActivity {
         tabLayout.setTabTextColors(ColorStateList.valueOf(Color.WHITE));
 
 
-
-
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        mInterstitialAd.show();
+        finish();
+    }
 
     public void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());

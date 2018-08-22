@@ -141,7 +141,7 @@ public class Horror_Movies extends AppCompatActivity {
             try {
 
                 // Enter URL address where your php file resides
-                url = new URL("https://salamappz.tech/Acheri/mv_read.php");
+                url = new URL("https://salamlabs.com/Acheri/mv_read.php");
 
             } catch (MalformedURLException e) {
                 // TODO Auto-generated catch block

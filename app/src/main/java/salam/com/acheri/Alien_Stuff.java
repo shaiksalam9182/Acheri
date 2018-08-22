@@ -91,7 +91,7 @@ public class Alien_Stuff extends Fragment {
             try {
 
                 // Enter URL address where your php file resides
-                url = new URL("https://salamappz.tech/Acheri/alien_read.php");
+                url = new URL("https://salamlabs.com/Acheri/alien_read.php");
 
             } catch (MalformedURLException e) {
                 // TODO Auto-generated catch block

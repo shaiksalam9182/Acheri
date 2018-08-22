@@ -94,7 +94,7 @@ public class Posts extends Fragment {
             try {
 
                 // Enter URL address where your php file resides
-                url = new URL("https://salamappz.tech/Acheri/read_posts.php");
+                url = new URL("https://salamlabs.com/Acheri/read_posts.php");
 
             } catch (MalformedURLException e) {
                 // TODO Auto-generated catch block

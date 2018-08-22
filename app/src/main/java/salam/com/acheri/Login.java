@@ -16,6 +16,10 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -46,6 +50,8 @@ public class Login extends AppCompatActivity {
 
     SharedPreferences sd;
     SharedPreferences.Editor editor;
+    AdView adView;
+    TextView tvSkip;
 
 
 
@@ -53,6 +59,12 @@ public class Login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        MobileAds.initialize(this, "ca-app-pub-1679206260526965~1117051146");
+
+        adView = findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        adView.loadAd(adRequest);
 
         sd = getSharedPreferences("login", Context.MODE_PRIVATE);
         editor = sd.edit();
@@ -62,6 +74,17 @@ public class Login extends AppCompatActivity {
         etpass = (EditText)findViewById(R.id.et_pass);
 
         btlogin = (Button)findViewById(R.id.bt_login);
+
+        tvSkip = (TextView)findViewById(R.id.tv_skip);
+
+        tvSkip.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent login = new Intent(Login.this,Home.class);
+                startActivity(login);
+                finish();
+            }
+        });
 
 
 
@@ -115,7 +138,7 @@ public class Login extends AppCompatActivity {
             try {
 
                 // Enter URL address where your php file resides
-                url = new URL("https://salamappz.tech/Acheri/login.php");
+                url = new URL("https://salamlabs.com/Acheri/login.php");
 
             } catch (MalformedURLException e) {
                 // TODO Auto-generated catch block

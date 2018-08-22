@@ -102,7 +102,7 @@ class PostsAdapter extends RecyclerView.Adapter <PostsAdapter.MyViewAdapter>{
                         try {
 
                             // Enter URL address where your php file resides
-                            url = new URL("https://salamappz.tech/Acheri/add_like.php");
+                            url = new URL("https://salamlabs.com/Acheri/add_like.php");
 
                         } catch (MalformedURLException e) {
                             // TODO Auto-generated catch block
@@ -212,7 +212,7 @@ class PostsAdapter extends RecyclerView.Adapter <PostsAdapter.MyViewAdapter>{
                         try {
 
                             // Enter URL address where your php file resides
-                            url = new URL("https://salamappz.tech/Acheri/add_share.php");
+                            url = new URL("https://salamlabs.com/Acheri/add_share.php");
 
                         } catch (MalformedURLException e) {
                             // TODO Auto-generated catch block
@@ -344,7 +344,7 @@ class PostsAdapter extends RecyclerView.Adapter <PostsAdapter.MyViewAdapter>{
                         try {
 
                             // Enter URL address where your php file resides
-                            url = new URL("https://salamappz.tech/Acheri/add_like_places.php");
+                            url = new URL("https://salamlabs.com/Acheri/add_like_places.php");
 
                         } catch (MalformedURLException e) {
                             // TODO Auto-generated catch block
@@ -454,7 +454,7 @@ class PostsAdapter extends RecyclerView.Adapter <PostsAdapter.MyViewAdapter>{
                         try {
 
                             // Enter URL address where your php file resides
-                            url = new URL("https://salamappz.tech/Acheri/add_share.php");
+                            url = new URL("https://salamlabs.com/Acheri/add_share.php");
 
                         } catch (MalformedURLException e) {
                             // TODO Auto-generated catch block
@@ -584,7 +584,7 @@ class PostsAdapter extends RecyclerView.Adapter <PostsAdapter.MyViewAdapter>{
                         try {
 
                             // Enter URL address where your php file resides
-                            url = new URL("https://salamappz.tech/Acheri/alien_like_aliens.php");
+                            url = new URL("https://salamlabs.com/Acheri/alien_like_aliens.php");
 
                         } catch (MalformedURLException e) {
                             // TODO Auto-generated catch block
@@ -695,7 +695,7 @@ class PostsAdapter extends RecyclerView.Adapter <PostsAdapter.MyViewAdapter>{
                         try {
 
                             // Enter URL address where your php file resides
-                            url = new URL("https://salamappz.tech/Acheri/add_share.php");
+                            url = new URL("https://salamlabs.com/Acheri/add_share.php");
 
                         } catch (MalformedURLException e) {
                             // TODO Auto-generated catch block
@@ -836,7 +836,7 @@ class PostsAdapter extends RecyclerView.Adapter <PostsAdapter.MyViewAdapter>{
             try {
 
                 // Enter URL address where your php file resides
-                url = new URL("https://salamappz.tech/Acheri/add_like.php");
+                url = new URL("https://salamlabs.com/Acheri/add_like.php");
 
             } catch (MalformedURLException e) {
                 // TODO Auto-generated catch block

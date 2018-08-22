@@ -20,6 +20,7 @@
             android:text="Notifications"
             android:textColor="#ffffff"
             android:layout_weight="1"
+            android:id="@+id/tv_not_desc"
             android:textSize="20dp"
             android:layout_height="wrap_content" />
         <TextView
@@ -178,6 +179,17 @@
 
 
 
+    <com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView_profile"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        ads:adSize="BANNER"
+        ads:adUnitId="ca-app-pub-1679206260526965/5198221793">
+    </com.google.android.gms.ads.AdView>
 
 
 </LinearLayout>
